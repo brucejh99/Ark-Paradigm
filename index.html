@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<p>Server is here!</p>
+<div id="updates"></div>
+
+<script>
+    function displayUpdates(update) {
+        $("#updates").append(`<p> Someone added key: ${update.key} with value: ${update.value} </p>`);
+    }
+    var socket = io();
+    socket.on('update', displayUpdates);
+</script>
+</body>
+</html>
