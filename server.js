@@ -12,6 +12,7 @@ const io = require('socket.io')(server);
 
 console.log(`Listening on port ${port}`);
 
+// updates page and middleware
 app.use('/', express.static(path.join(__dirname)));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
